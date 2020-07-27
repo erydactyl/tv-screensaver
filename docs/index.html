@@ -123,11 +123,143 @@
 					100% { left: calc(calc(var(--shape-left) + 150 + var(--offset)) * 1%); }
 				}
 			/* } */
-
-
-			/* layer_2 - includes (water), moves with layer_1 { */
+			
+			/* layer_2 - includes (clouds) {*/
+			
 				#layer_2 {
 					--layer-z: 2;
+					--layer: layer_2;
+				}
+				
+				#cloud {
+					/* top: calc(30% - (var(--shape-height) * 1%) / 2); */
+				}
+						
+				#cloud:nth-of-type(2n-1) {
+					--offset: 0;
+				}
+				
+				#cloud:nth-of-type(2n+0) {
+					--offset: -200;
+				}
+				
+				#cloud:nth-of-type(1), #cloud:nth-of-type(2) {	
+					--shape-z: 1;	
+					--shape-width: 25;
+					--shape-height: 25;
+					--shape-left: 50;
+					--cloud-fill: #ffffff22;
+					top: -15%;
+					
+				}
+				
+				#cloud:nth-of-type(3), #cloud:nth-of-type(4) {	
+					--shape-z: 2;		
+					--shape-width: 10;
+					--shape-height: 10;
+					--shape-left: 30;
+					--cloud-fill: #ffffff55;
+					top: 5%;
+					
+				}
+				
+				#cloud:nth-of-type(5), #cloud:nth-of-type(6) {	
+					--shape-z: 1;	
+					--shape-width: 25;
+					--shape-height: 20;
+					--shape-left: 100;
+					--cloud-fill: #ffffff77;
+					top: -15%;
+					
+				}
+				
+				#cloud:nth-of-type(7), #cloud:nth-of-type(8) {	
+					--shape-z: 2;		
+					--shape-width: 20;
+					--shape-height: 20;
+					--shape-left: 140;
+					--cloud-fill: #ffffff40;
+					top: -15%;
+					
+				}
+
+				#cloud:nth-of-type(9), #cloud:nth-of-type(10) {	
+					--shape-z: 1;	
+					--shape-width: 20;
+					--shape-height: 20;
+					--shape-left: 70;
+					--cloud-fill: #ffffff32;
+					top: -15%;
+					
+				}
+				
+				#cloud:nth-of-type(11), #cloud:nth-of-type(12) {	
+					--shape-z: 1;	
+					--shape-width: 20;
+					--shape-height: 20;
+					--shape-left: 195;
+					--cloud-fill: #ffffff66;
+					top: -12%;
+					
+				}
+				
+				#cloud:nth-of-type(13), #cloud:nth-of-type(14) {	
+					--shape-z: 1;	
+					--shape-width: 20;
+					--shape-height: 20;
+					--shape-left: 70;
+					--cloud-fill: #ffffff21;
+					top: -15%;
+					
+				}
+				
+				#cloud:nth-of-type(15), #cloud:nth-of-type(16) {	
+					--shape-z: 1;	
+					--shape-width: 20;
+					--shape-height: 20;
+					--shape-left: 15;
+					--cloud-fill: #ffffff44;
+					top: -15%;
+					
+				}
+				
+				#cloud:nth-of-type(17), #cloud:nth-of-type(18) {	
+					--shape-z: 1;	
+					--shape-width: 15;
+					--shape-height: 15;
+					--shape-left: 160;
+					--cloud-fill: #ffffff11;
+					top: -5%;
+					
+				}
+				
+				#cloud:nth-of-type(19), #cloud:nth-of-type(20) {	
+					--shape-z: 1;	
+					--shape-width: 25;
+					--shape-height: 25;
+					--shape-left: 60;
+					--cloud-fill: #ffffff22;
+					top: -10%;
+					
+				}
+				
+				
+				#cloud-inner {
+				  fill: var(--cloud-fill);
+				  stroke: black;
+				  stroke-width: 0;
+				  stroke-linejoin: round;
+				}
+				
+				@keyframes layer_2 {
+					0% { left: calc(calc(var(--shape-left) + var(--offset)) * 1%); }
+					100% { left: calc(calc(var(--shape-left) + 200 + var(--offset)) * 1%); }
+				}
+
+
+			/* layer_3 - includes (water), moves with layer_1 { */
+				#layer_3 {
+					--layer-z: 3;
 				}
 				
 				#water {
@@ -191,11 +323,11 @@
 		</script>
 	</head>
 	<body>
-		<div class="layer" id="layer_0"> <!-- layer_0: z = 0000-0999 -->
+		<div class="layer" id="layer_0"> 
 			<div class="shape" id="sky"></div>
 		</div>
 
-		<div class="layer" id="layer_1"> <!-- layer_1: z = 1000-1999 -->
+		<div class="layer" id="layer_1">
 			<div class="shape animated-shape" id="light"></div><div class="shape animated-shape" id="light"></div>
 			<div class="shape animated-shape" id="light"></div><div class="shape animated-shape" id="light"></div>
 			<div class="shape animated-shape" id="light"></div><div class="shape animated-shape" id="light"></div>
@@ -203,8 +335,174 @@
 			<div class="shape animated-shape" id="light"></div><div class="shape animated-shape" id="light"></div>
 			<div class="shape animated-shape" id="light"></div><div class="shape animated-shape" id="light"></div>
 		</div>
+		
+		
+		<div class="layer" id="layer_2">
+			<div class="shape animated-shape" id="cloud"><svg class="shape animated-shape" id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div>
+		   	<div class="shape animated-shape" id="cloud"><svg class="shape animated-shape" id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
+			<path id="cloud-inner" d='M 25,60 
+		      		 a 20,20 1 0,0 0,40 
+		     		 h 50 
+		      		 a 20,20 1 0,0 0,-40 
+		     		 a 10,10 1 0,0 -15,-10 
+		   			 a 15,15 1 0,0 -35,10  
+		   			 z' />
+		   	</svg></div>
+       	</div>
 
-		<div class="layer" id="layer_2"> <!-- layer_2: z = 2000-2999 -->
+		<div class="layer" id="layer_3">
 			<div class="shape" id="water"></div>
 		</div>
 		
