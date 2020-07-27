@@ -12,6 +12,7 @@
 					 margin: 0px;
 					 padding: 0px;
 					 position: absolute;
+					 zoom:
 				}
 			/* } */
 			
@@ -148,9 +149,13 @@
 					--shape-height: 25;
 					--shape-left: 45;
 					--cloud-fill: #ffffff;
-					opacity: 0.6;
+					opacity: 0.35;
 					top: -15%;
 					
+				}
+				
+				#cloud:nth-of-type(2) {
+					-offset: -200;
 				}
 				
 				#cloud:nth-of-type(3), #cloud:nth-of-type(4) {	
@@ -170,7 +175,7 @@
 					--shape-height: 20;
 					--shape-left: 100;
 					--cloud-fill: #ffffff;
-					opacity: 0.9;
+					opacity: 0.2;
 					top: -15%;
 					
 				}
@@ -203,7 +208,7 @@
 					--shape-height: 20;
 					--shape-left: 160;
 					--cloud-fill: #ffffff;
-					opacity: 0.7;
+					opacity: 0.46;
 					top: -12%;
 					
 				}
@@ -234,7 +239,7 @@
 					--shape-z: 1;	
 					--shape-width: 15;
 					--shape-height: 15;
-					--shape-left: 160;
+					--shape-left: 175;
 					--cloud-fill: #ffffff;
 					opacity: 0.7;
 					top: -5%;
@@ -284,10 +289,10 @@
 				}
 				
 				#overlay-container {
-					width: 10%;
+					width: 15%;
 					top: 2%;
-					left: 90%;
-					transform: translate(-10%,0);
+					left: 85%;
+					transform: translate(-15%,0);
 				}
 				
 				#logo {
@@ -306,7 +311,7 @@
 					text-align: right;
 					color: white;
 					font-family: "Arial";
-					font-size: 2.5vw;
+					font-size: 3.5vw;
 					--text-stroke-color: black;
 					text-shadow: -1px 1px 0 var(--text-stroke-color), 1px 1px 0 var(--text-stroke-color), 1px -1px 0 var(--text-stroke-color), -1px -1px 0 var(--text-stroke-color);
 					opacity: 0.7;
@@ -328,7 +333,9 @@
 					border: none;
 					width: 100%;
 					height: 120%;
-					top: -10%;
+					top: 0%;
+					cursor: default;
+					background-color: transparent !important;
 				}
 			/* } */
 		
@@ -364,7 +371,7 @@
 		
 		
 		<div class="layer" id="layer_2">
-			<div class="shape animated-shape" id="cloud"><svg class="shape animated-shape" id="cloud-outer" viewBox='0 0 105 105'>
+			<div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
 			<path id="cloud-inner" d='M 25,60 a 20,20 1 0,0 0,40 h 50 a 20,20 1 0,0 0,-40 a 10,10 1 0,0 -15,-10 a 15,15 1 0,0 -35,10 z' />
 		   	</svg></div><div class="shape animated-shape" id="cloud"><svg id="cloud-outer" viewBox='0 0 105 105'>
 			<path id="cloud-inner" d='M 25,60 a 20,20 1 0,0 0,40 h 50 a 20,20 1 0,0 0,-40 a 10,10 1 0,0 -15,-10 a 15,15 1 0,0 -35,10 z' />
